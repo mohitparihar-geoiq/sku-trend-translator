@@ -20,10 +20,20 @@ run:
     port: 8000
     env: PORT
   env:
+    - name: SERPER_API_KEY
+      value-from: SERPER_API_KEY
+    - name: TAVILY_API_KEY
+      value-from: TAVILY_API_KEY
+    - name: BEDROCK_API_KEY
+      value-from: BEDROCK_API_KEY
     - name: BEDROCK_MODEL_ID
       value: us.anthropic.claude-sonnet-4-5-20250929-v1:0
     - name: AWS_DEFAULT_REGION
       value: us-east-1
+    - name: AWS_ACCESS_KEY_ID
+      value-from: AWS_ACCESS_KEY_ID
+    - name: AWS_SECRET_ACCESS_KEY
+      value-from: AWS_SECRET_ACCESS_KEY
 
 observability:
   tracing: awsxray
